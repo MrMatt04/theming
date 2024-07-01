@@ -1,12 +1,23 @@
-<h2 mat-dialog-title>Hi {{ data.name }}</h2>
+<header class="kleurdialog">
+  <h2 mat-dialog-title>Mijn title</h2>
+  <button (click)="onNoClick()" mat-mini-fab>
+    <mat-icon>close</mat-icon>
+  </button>
+</header>
 <mat-dialog-content>
   <p>What's your favorite animal?</p>
   <mat-form-field>
     <mat-label>Favorite Animal</mat-label>
-    <input matInput />
+    <input matInput #myinput />
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="animal()" cdkFocusInitial>Ok</button>
+  <button
+    mat-button
+    color="primary"
+    [mat-dialog-close]="animal()"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
 </mat-dialog-actions>

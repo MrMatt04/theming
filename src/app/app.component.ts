@@ -38,6 +38,7 @@ export class AppComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogComponent, {
+      panelClass: 'my-dialog',
       data: { name: this.name(), animal: this.animal() },
     });
 

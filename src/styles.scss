@@ -1,4 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+// styles.scss
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@use "@angular/material" as mat;
+@use "./styles/themes/all" as themes;
+@use "./styles/typography/config";
+
+@include mat.core();
+@include mat.typography-hierarchy(config.$my-app-typography);
+@include mat.core-theme(themes.$my-app-light-theme);
+@include mat.button-theme(themes.$my-app-light-theme);
+
+
+
+@media (prefers-color-scheme: dark) {
+    @include mat.core-color(themes.$my-app-dark-theme);
+    @include mat.button-color(themes.$my-app-dark-theme);
+  }
+  
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+
+.my-dialog {
+    .kleurdialog {
+        align-items: center;
+        display: flex;
+        margin: 0px;
+        background-color: #dc2578;
+        padding: 0 20px;
+        h2 {    
+            padding: 0;      
+        }
+        button {
+            margin-left: auto;
+        }
+    
+    }
+}
