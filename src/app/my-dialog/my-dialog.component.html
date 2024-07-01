@@ -8,16 +8,9 @@
   <p>What's your favorite animal?</p>
   <mat-form-field>
     <mat-label>Favorite Animal</mat-label>
-    <input matInput #myinput />
+    <input matInput cdkfocusinitial />
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button
-    mat-button
-    color="primary"
-    [mat-dialog-close]="animal()"
-    cdkFocusInitial
-  >
-    Ok
-  </button>
+  <button mat-button color="primary" [mat-dialog-close]="animal()">Ok</button>
 </mat-dialog-actions>
